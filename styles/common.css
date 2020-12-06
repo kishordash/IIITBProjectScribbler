@@ -2,9 +2,6 @@ body {
   height: calc(100vh - 10px);
   padding: 5px 10px;
   margin: 0;
-  background-image: url('../images/background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 button {
   font-size: 1em;
@@ -27,6 +24,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 15px;
 }
 .scribbler {
   font-family: 'Montez', cursive; 
