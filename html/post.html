@@ -5,10 +5,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Post</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montez&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/common.css">
+  <link rel="stylesheet" href="../styles/post.css">
 </head>
 
 <body>
-  <h1>Post Page</h1>
+  <section id="post-section-header" class="header">
+    <div class="hp-details">
+      <div class="scribbler">ScriBBler</div>
+      <div class="hyperlink">
+        <a>Explore, </a>
+        <a>Imagine, </a>
+        <a>Create </a>
+      </div>
+    </div>
+    <div class="hp-registre-user">
+      <button onclick="createModal('sign-up-modal')">Sign Up</button>
+      <button onclick="createModal('sign-in-modal')">Sign In</button>
+    </div>
+    <div id='sign-up-modal' class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title">Get Started</h1>
+          <i class="fa fa-times modal-close-icon"></i>
+        </div>
+        <div class="modal-body">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name">
+          <div class="error-message">Please! Fill out this field.</div>
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter your username">
+          <div class="error-message">Please! Fill out this field.</div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password">
+          <div class="error-message">Please! Fill out this field.</div>
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password">
+          <div class="error-message">Please! Fill out this field.</div>
+          <div class="error-message">Passwords Do not match.</div>
+        </div>
+        <div class="modal-footer">
+          <button class="submit-btn" onclick="signUp()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+    <div id='sign-in-modal' class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title">Welcome Back!</h1>
+          <i class="fa fa-times modal-close-icon"></i>
+        </div>
+        <div class="modal-body">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter your username">
+          <div class="error-message">Please! Fill out this field.</div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password">
+          <div class="error-message">Please! Fill out this field.</div>
+        </div>
+        <div class="modal-footer">
+          <button class="submit-btn" onclick="signIn()">Sign In</button>
+          <div class='open-sign-up'>Not a member? <a onclick="signUpNavFromSignIn()">Sign Up</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="post-body" class="post-body">
+    <header id="post-header-text"></header>
+    <input type="text" id="header-edit" class="hidden">
+    <div class="post-header">
+      <div class="username">Stristi Gupta</div>
+      <button class="edit-btn" id="edit-btn" onclick="editPost()">Edit <i class="fa fa-pencil-square-o"></i></button>
+      <button class="save-btn hidden" id="save-btn" onclick="savePost()">Save <i class="fa fa-save"></i></button>
+    </div>
+    <p class="post-description" id="post-description">
+    </p>
+    <textarea id="post-description-edit" name="content" rows="12" class="hidden"></textarea>
+  </section>
+  <section id="post-footer" class="post-footer">
+    <button class="like-btn" id="like-btn" onclick="likePost()"><i class="fa fa-thumbs-up"></i> Like</button>
+    <div class="like-text" id='like-text'></div>
+    <textarea id="comment-box" rows="2" column="100" placeholder="Leave a comment..."></textarea>
+    <button onclick="addComment()" class="comment-btn">Comment</button>
+    <h4>All Comments</h4>
+    <div class="all-comments" id="all-comments"></div>
+  </section>
+  <script src="../scripts/common.js"></script>
+  <script src="../scripts/post.js"></script>
 </body>
 
 </html>
