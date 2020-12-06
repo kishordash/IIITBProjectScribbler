@@ -1,0 +1,13 @@
+.details {
+  width: 100%;
+  height: calc(100% - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.details button {
+  background-color: #e6ce1c;
+  height: fit-content;
+  margin: 8px;
+  color: black;
+}
