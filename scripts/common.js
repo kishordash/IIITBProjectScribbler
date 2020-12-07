@@ -1,3 +1,7 @@
+/***
+ * Modal Creation Handler
+* @param {string} modalId - This is accepting the ID of the modal
+ */
 function createModal(modalId) {
   const modal = document.getElementById(modalId);
   const span = document.querySelectorAll(`#${modalId} .modal-close-icon`)[0];
@@ -14,6 +18,10 @@ function createModal(modalId) {
     }
   }
 }
+/***
+ * Close Modal Handler
+* @param {string} modalId - This is accepting the ID of the modal
+ */
 function clsoseModal(modalId) {
   const modal = document.getElementById(modalId);
   modal.style.display = "none";
@@ -77,8 +85,4 @@ function signIn() {
 function signUpNavFromSignIn() {
   clsoseModal('sign-in-modal');
   createModal('sign-up-modal');
-}
-
-function createBlog() {
-  //do nothing
 }

@@ -1,0 +1,3 @@
+function createBlog() {
+    //do nothing
+}
